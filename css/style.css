@@ -1,0 +1,370 @@
+/* Logo font style - font-family: 'Lobster', cursive; */
+
+/* text family - font-family: sans-serif */
+
+/* 
+    Colors:
+    main color: #3cc3b5,
+    bottom-header color: #4ecec1,
+    button color: #44c69a,
+    branded name color: #a8a8a8,
+    bottom footer color: #2ea89b,
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: coral;
+}
+
+/* Start Header */
+
+.logo {
+    font-family: 'Lobster';
+    font-size: 48px;
+    color: #3cc3b5;
+}
+
+.top-header-content {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.logo {
+    margin: 0;
+}
+
+.search {
+    margin-top: 15px;
+    height: 25px;
+    width: 400px;
+}
+
+.search-icon {
+    height: 22px;
+    margin-top: 17px;
+    margin-left: -665px;
+}
+
+.search-icon:hover {
+    cursor: pointer;
+}
+
+.shopping-cart {
+    display: flex;
+}
+
+.top-nav-item-text {
+    margin-left: 15px;
+    margin-top: 14px;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.inner-bottomHeader {
+    height: 35px;
+    background-color: #4ecec1;
+}
+
+.main-nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+.main-nav-item {
+    margin-right: 35px;
+    padding-top: 9px;
+    font-family: sans-serif;
+}
+
+/* End Header */
+
+/* Start Main */
+
+.inner-section1 {
+    background-color: #3cc3b5;
+    height: 450px;
+}
+
+.main-section1-image {
+    margin-left: 575px;
+    padding-top: 50px;
+}
+
+.main-section1-content {
+    margin-top: -365px;
+    margin-right: 520px;
+    float: right;
+    width: 25%;
+}
+
+.main-section1-content .sub-header {
+    text-transform: uppercase;
+    color: white;
+    width: 85%;
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+.main-section1-text {
+    margin-top: -20px;
+    width: 110%;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+    line-height: 30px;
+}
+
+.shop-now {
+    padding: 10px;
+    width: 150px;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.shop-now:hover {
+    background-color: white;
+    color: coral;
+    cursor: pointer;
+}
+
+.sliders {
+    display: flex;
+    justify-content: center;
+}
+
+.sliders input[type='radio'] {
+    display: none;
+}
+
+.sliders label {
+    color: white;
+    font-weight: normal;
+}
+
+.sliders label:before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin: 0 5px 0 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 11px;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.sliders input[type=radio]:checked + label:after {
+    border-radius: 11px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    content: " ";
+    display: block;
+    background: coral;
+}
+
+.inner-section2 {
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paddle-left, .paddle-right {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.paddle:hover {
+    cursor: pointer;
+}
+
+.greater-than {
+    height: 150px;
+    width: 50px;
+}
+
+.less-than {
+    height: 175px;
+    width: 45px;
+}
+
+.branded-shoes-content, .branded-tshirts-content, .branded-shorts-content {
+    margin-left: 25px;
+    margin-top: 15px;
+    float: right;
+}
+
+.branded-shoes .sub-header, .branded-tshirts .sub-header, .branded-shorts .sub-header {
+    color: #a8a8a8;
+    font-family: sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    width: 120px;
+}
+
+.shop {
+    padding: 10px;
+    width: 75px;
+    background-color: #44c69a;
+    border-radius: 5px;
+    border-color: #44c69a;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 750;
+}
+
+.shop:hover {
+    background-color: coral;
+    border-color: coral;
+    cursor: pointer;
+}
+
+.inner-section3 h2 {
+    padding: 15px;
+    padding-left: 25px;
+    background-color: #3cc3b5;
+    font-family: sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.feat-prod-list {
+    margin-left: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 50%;
+    height: 750px;
+}
+
+.feat-prod-item h3 {
+    margin: 0;
+    font-family: sans-serif;
+    color: #a8a8a8;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+}
+
+.buy-now {
+    margin-top: -55px;
+    margin-right: 35px;
+    padding: 10px;
+    float: right;
+    background-color: #44c69a;
+    border-radius: 5px;
+    border-color: #44c69a;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.buy-now:hover {
+    background-color: coral;
+    border-color: coral;
+    cursor: pointer;
+}
+
+.feat-prod-item p {
+    margin-top: 25px;
+    padding-left: 55px;
+    font-size: 24px;
+}
+
+/* End Main */
+
+/* Start Footer */
+
+.inner-footer {
+    background-color: #3cc3b5;
+}
+
+.top-footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top-footer h2 {
+    color: white;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.top-footer-content {
+    padding: 0;
+    list-style-type: none;
+    line-height: 30px;
+    text-align: center;
+}
+
+.bottom-footer {
+    background-color: #2ea89b;
+    height: 50px;
+    text-align: center;
+}
+
+.colophon-text {
+    padding-top: 15px;
+    color: white;
+}
+
+/* End Footer */
+
+/* Sale Page */
+
+.add-button {
+    background-color: #2ea89b;
+    font-weight: 500;
+    /* margin-left: 117px; */
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.cart-button {
+    /* color: white; */
+    font-weight: 500;
+}
+
+.shopping-buttons {
+    background-color: #44c69a;
+    border-radius: 5px;
+}
+
+.shopping-buttons:hover {
+    background-color: coral;
+}

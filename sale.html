@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sale Page</title>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="inner-topHeader">
+            <section class="section top-header">
+                <div class="top-header-content">
+                    <h1 class="logo">Aditii</h1>
+                    <input type="text" placeholder="Search..." class="search">
+                    <img src="media/icons8-search-24.png" alt="search icon" class="search-icon">
+                    <div class="row">
+                        <div class="col d-flex justify-content-end mt-2">
+                            <div id="shoppingDiv">
+                                <div class="shopping-buttons">
+                                    <button class="btn cart-button" id="cartBtn checkout">Cart <span id="cartItems">0</span> item(s) -
+                                        $<span id="cartSubTotal">0.00</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section main-header">
+                <div class="inner-bottomHeader">
+                    <nav class="main-nav">
+                        <ul class="main-nav-list">
+                            <li class="main-nav-item"><a href="index.html">home</a></li>
+                            <li class="main-nav-item"><a href="sale.html">sale</a></li>
+                            <li class="main-nav-item"><a href="#link">handbags</a></li>
+                            <li class="main-nav-item"><a href="#link">wallets</a></li>
+                            <li class="main-nav-item"><a href="#link">accessories</a></li>
+                            <li class="main-nav-item"><a href="#link">mens store</a></li>
+                            <li class="main-nav-item"><a href="#link">shoes</a></li>
+                            <li class="main-nav-item"><a href="#link">vintage</a></li>
+                            <li class="main-nav-item"><a href="#link">services</a></li>
+                            <li class="main-nav-item"><a href="#link" id="checkout">checkout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </header>
+    <main class="main-sale-page">
+        <!-- Checkout Page -->
+        <section class="section checkout-page d-none">
+            <div class="bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <p class="bar-text">Home &gt; Checkout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="section checkout-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="checkout-header">Checkout</h2>
+                            <p class="checkout-text">Items you have added to your cart</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="checkout-item-count">
+                                <span id="checkoutItemCount"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <table class="table" id="table">
+                                <tr class="table-headers">
+                                    <td>Product Name</td>
+                                    <td>Unit Price</td>
+                                    <td>Quantity</td>
+                                    <td>Subtotal</td>
+                                </tr>
+                                <tbody id="tbody"></tbody>
+                                <!-- Load Items -->
+                                <tr class="totals" id="totals">
+                                    <td colspan="4">
+                                        <p class="total-subtotal" id="totalSubtotal">Subtotal:</p>
+                                        <p class="total-shipping" id="totalShipping">Shipping Fee:</p>
+                                        <p class="total-tax" id="totalTax">Tax:</p>
+                                        <p class="total-total" id="totalTotal">Total:</p>
+                                    </td>
+                                    <td class="total-values" id="totalValues">
+                                        <p class="subtotal-value" id="subtotalValue"></p>
+                                        <p class="shipping-value" id="shippingValue">100.00</p>
+                                        <p class="tax-value" id="taxValue"></p>
+                                        <p class="total-value">$<span id="totalValue"></span></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary confirm-button" id="confirmButton">confirm order</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- Close Checkout -->
+        <section class="sale-page">
+            <h1 class="sale-header text-center mb-5">Items Currently On Sale</h1>
+            <h3 class="main-sale-menu text-center">Bags</h3>
+            <div class="container sale-items">
+                <div class="row mb-5">
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/bag1-350x350.jpg" alt="leather backpack" class="bag img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Leather Mini Backpack $199.99</h5>
+                                <p class="figcaption-text text-center">Premium leather made to last. Triple stiched to
+                                    last a long time</p>
+                                <button class="btn btn-secondary add-button" data-id="1">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/bag2-350x350.jpg" alt="gucci bag" class="bag img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Gucci Gucci Bag $499.99</h5>
+                                <p class="figcaption-text text-center">It's Gucci so you know you want it and a must
+                                    have for everyone</p>
+                                <button class="btn btn-secondary add-button" data-id="2">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/bag3-350x350.jpg" alt="gator bag" class="bag img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Gator Skin Bag $349.99</h5>
+                                <p class="figcaption-text text-center">Is it real gator skin? At this price it has to be
+                                    so you need it</p>
+                                <button class="btn btn-secondary add-button" data-id="3">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <h3 class="side-items text-center mb-2">Shoes</h3>
+                <div class="row mb-5">
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/shoe1-350x350.jpg" alt="red shoes" class="shoes img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Red Shoes $149.99</h5>
+                                <p class="figcaption-text text-center">They are red, they are comfortable and they must
+                                    be on your feet now</p>
+                                <button class="btn btn-secondary add-button" data-id="4">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/shoes2-350x350.jpg" alt="green shoes" class="shoes img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Green Shoes $159.99</h5>
+                                <p class="figcaption-text text-center">These are green and also comfortable but are you
+                                    wearing the must have shoes?</p>
+                                <button class="btn btn-secondary add-button" data-id="5">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/shoe3-350x350.jpg" alt="white shoes" class="shoes img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">White Shoes $239.99</h5>
+                                <p class="figcaption-text text-center">Since these are white you can't wear them outside
+                                    but you'll look good in them</p>
+                                <button class="btn btn-secondary add-button" data-id="6">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <h3 class="side-items text-center mb-2">Shorts</h3>
+                <div class="row mb-5">
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/short1-350x350.jpg" alt="beach shorts" class="shorts img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Beach Shorts $79.99</h5>
+                                <p class="figcaption-text text-center">Don't want to get kicked off the beach? Then get
+                                    some shorts on</p>
+                                <button class="btn btn-secondary add-button" data-id="7">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/short2-350x350.jpg" alt="skateboard shorts" class="shorts img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Skateboard Shorts $99.99</h5>
+                                <p class="figcaption-text text-center">Since you aren't good at this better look good
+                                    while trying</p>
+                                <button class="btn btn-secondary add-button" data-id="8">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/short3-350x350.jpg" alt="laughing shorts" class="shorts img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Laughing Shorts $129.99</h5>
+                                <p class="figcaption-text text-center">Feeling down? Get some shorts that will make you
+                                    laugh when wearing them</p>
+                                <button class="btn btn-secondary add-button" data-id="9">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <h3 class="side-items text-center mb-2">T-Shirts</h3>
+                <div class="row mb-5">
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/t-shirt1-350x350.jpg" alt="hiking shirt" class="shirts img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Hiking Shirt $59.99</h5>
+                                <p class="figcaption-text text-center">Never been hiking? That's ok since they won't
+                                    know</p>
+                                <button class="btn btn-secondary add-button" data-id="10">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/t-shirt2-350x350.jpg" alt="lighthouse shirt" class="shirts img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Lighthouse Shirt $59.99</h5>
+                                <p class="figcaption-text text-center">A very cool looking lighthouse to say you've been
+                                    here before</p>
+                                <button class="btn btn-secondary add-button" data-id="11">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/t-shirt3-350x350.jpg" alt="skateboard shirt" class="shirts img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Skateboard Shirt $59.99</h5>
+                                <p class="figcaption-text text-center">A shirt to go with those skateboard shorts even
+                                    though you can't skateboard</p>
+                                <button class="btn btn-secondary add-button" data-id="12">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <h3 class="dessert text-center mb-2">Wallets</h3>
+                <div class="row dessert-row mb-5">
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/wallet1-350x350.jpg" alt="brown wallet" class="wallets img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Brown Leather Wallet $89.99</h5>
+                                <p class="figcaption-text text-center">Something you need, something you want so what
+                                    are you waiting for?</p>
+                                <button class="btn btn-secondary add-button" data-id="13">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/wallet2-350x350.jpg" alt="glowing wallet" class="wallets img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Awesome Wallet $129.99</h5>
+                                <p class="figcaption-text text-center">It freaking glows! Why wouldn't you want this for
+                                    all to see?</p>
+                                <button class="btn btn-secondary add-button" data-id="14">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figure">
+                            <img src="media/wallet3-350x350.jpg" alt="pink wallet" class="wallets img-fluid" />
+                            <figcaption>
+                                <h5 class="figcaption-header text-center">Pink Wallet $99.99</h5>
+                                <p class="figcaption-text text-center">It'll go with your pink dress, pink shoes and
+                                    anything else pink</p>
+                                <button class="btn btn-secondary add-button" data-id="15">Add To Cart</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="footer">
+        <div class="inner-footer">
+            <section class="top-footer">
+                <div class="featured-sale top">
+                    <h2>featured sale</h2>
+                    <ul class="feat-sale-list top-footer-content">
+                        <li class="feat-sale-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="feat-sale-item"><a href="#link">American Appeal</a></li>
+                        <li class="feat-sale-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="feat-sale-item"><a href="#link">Big Buddha</a></li>
+                        <li class="feat-sale-item"><a href="#link">Chanel</a></li>
+                        <li class="feat-sale-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="feat-sale-item"><a href="#link">Coach</a></li>
+                        <li class="feat-sale-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+                <div class="mens-store">
+                    <h2>mens store</h2>
+                    <ul class="men-store-list top top-footer-content">
+                        <li class="men-store-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="men-store-item"><a href="#link">American Appeal</a></li>
+                        <li class="men-store-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="men-store-item"><a href="#link">Big Buddha</a></li>
+                        <li class="men-store-item"><a href="#link">Chanel</a></li>
+                        <li class="men-store-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="men-store-item"><a href="#link">Coach</a></li>
+                        <li class="men-store-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+                <div class="women-store">
+                    <h2>womens store</h2>
+                    <ul class="womens-store-list top top-footer-content">
+                        <li class="womens-store-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="womens-store-item"><a href="#link">American Appeal</a></li>
+                        <li class="womens-store-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="womens-store-item"><a href="#link">Big Buddha</a></li>
+                        <li class="womens-store-item"><a href="#link">Chanel</a></li>
+                        <li class="womens-store-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="womens-store-item"><a href="#link">Coach</a></li>
+                        <li class="womens-store-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+                <div class="quick-links">
+                    <h2>quick links</h2>
+                    <ul class="quick-links-list top top-footer-content">
+                        <li class="quick-links-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="quick-links-item"><a href="#link">American Appeal</a></li>
+                        <li class="quick-links-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="quick-links-item"><a href="#link">Big Buddha</a></li>
+                        <li class="quick-links-item"><a href="#link">Chanel</a></li>
+                        <li class="quick-links-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="quick-links-item"><a href="#link">Coach</a></li>
+                        <li class="quick-links-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="bottom-footer">
+                <p class="colophon-text">Copyright &copy; 2021 Css Author</p>
+            </section>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

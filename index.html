@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Aditii</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="inner-topHeader">
+            <section class="section top-header">
+                <div class="top-header-content">
+                    <h1 class="logo">Aditii</h1>
+                    <input type="text" placeholder="Search..." class="search">
+                    <img src="media/icons8-search-24.png" alt="search icon" class="search-icon">
+                    <div class="row">
+                        <div class="col d-flex justify-content-end mt-2">
+                            <div id="shoppingDiv">
+                                <div class="shopping-buttons">
+                                    <button class="btn cart-button" id="cartBtn checkout">Cart <span id="cartItems">0</span> item(s) -
+                                        $<span id="cartSubTotal">0.00</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section main-header">
+                <div class="inner-bottomHeader">
+                    <nav class="main-nav">
+                        <ul class="main-nav-list">
+                            <li class="main-nav-item"><a href="index.html">home</a></li>
+                            <li class="main-nav-item"><a href="sale.html">sale</a></li>
+                            <li class="main-nav-item"><a href="#link">handbags</a></li>
+                            <li class="main-nav-item"><a href="#link">wallets</a></li>
+                            <li class="main-nav-item"><a href="#link">accessories</a></li>
+                            <li class="main-nav-item"><a href="#link">mens store</a></li>
+                            <li class="main-nav-item"><a href="#link">shoes</a></li>
+                            <li class="main-nav-item"><a href="#link">vintage</a></li>
+                            <li class="main-nav-item"><a href="#link">services</a></li>
+                            <li class="main-nav-item"><a href="#link" id="checkout">checkout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </header>
+    <!-- Checkout Page -->
+    <section class="section checkout-page d-none">
+        <div class="bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="bar-text">Home &gt; Checkout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="section checkout-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="checkout-header">Checkout</h2>
+                        <p class="checkout-text">Items you have added to your cart</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="checkout-item-count">
+                            <span id="checkoutItemCount"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table" id="table">
+                            <tr class="table-headers">
+                                <td>Product Name</td>
+                                <!-- <td>product code</td> -->
+                                <td>Unit Price</td>
+                                <td>Quantity</td>
+                                <td>Subtotal</td>
+                            </tr>
+                            <tbody id="tbody"></tbody>
+                            <!-- Load Items -->
+                            <tr class="totals" id="totals">
+                                <td colspan="4">
+                                    <p class="total-subtotal" id="totalSubtotal">Subtotal:</p>
+                                    <p class="total-shipping" id="totalShipping">Shipping Fee:</p>
+                                    <p class="total-tax" id="totalTax">Tax:</p>
+                                    <p class="total-total" id="totalTotal">Total:</p>
+                                </td>
+                                <td class="total-values" id="totalValues">
+                                    <p class="subtotal-value" id="subtotalValue"></p>
+                                    <p class="shipping-value" id="shippingValue">100.00</p>
+                                    <p class="tax-value" id="taxValue"></p>
+                                    <p class="total-value">$<span id="totalValue"></span></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-secondary confirm-button" id="confirmButton">confirm order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Close Checkout -->
+    <main class="main" id="homePage">
+        <div class="inner-section1">
+            <section class="section1 main-section1">
+                <div class="main-section1-image">
+                    <img src="media/poloshirt1-250x350.jpg" alt="placeholder img" class="img-fluid">
+                </div>
+                <div class="main-section1-content">
+                    <h2 class="sub-header">cowhide standard crew</h2>
+                    <p class="main-section1-text">White coloured, short-sleeved, printed T-shirt for men by Levi's. This crew-neck T-shirt is made of organic cotton and comes in regular fit.</p>
+                    <button class="shop-now">shop now</button>
+                    <div class="clear"></div>
+                </div>
+                <div class="sliders">
+                    <input type="radio" name="slider" id="mainSlider1" value="1">
+                    <label for="mainSlider1"></label>
+                    <input type="radio" name="slider" id="mainSlider2" value="2">
+                    <label for="mainSlider2"></label>
+                    <input type="radio" name="slider" id="mainSlider3" value="3">
+                    <label for="mainSlider3"></label>
+                    <input type="radio" name="slider" id="mainSlider4" value="4">
+                    <label for="mainSlider4"></label>
+                    <input type="radio" name="slider" id="mainSlider5" value="5">
+                    <label for="mainSlider5"></label>
+                </div>
+            </section>
+        </div>
+            <section class="main-section2-content">
+                <div class="inner-section2">
+                    <button class="paddle paddle-left"><img src="media/icons8-less-than-48.png" alt="scroll left arrow" class="less-than"></button>
+                    <div class="branded-shoes">
+                        <img src="media/shoes3-200x200.jpg" alt="placeholder img" class="shoe-img1">
+                        <div class="branded-shoes-content">
+                            <h3 class="sub-header">branded shoes</h3>
+                            <button class="shop">shop</button>
+                        </div>
+                    </div>
+                    <div class="branded-tshirts">
+                        <img src="media/t-shirt1-200x200.jpg" alt="placeholder img" class="tshirt-img1">
+                        <div class="branded-tshirts-content">
+                            <h3 class="sub-header">branded t-shirts</h3>
+                            <button class="shop">shop</button>
+                        </div>
+                    </div>
+                    <div class="branded-shorts">
+                        <img src="media/short2-200x200.jpg" alt="placeholder img" class="shorts-img1">
+                        <div class="branded-shorts-content">
+                            <h3 class="sub-header">branded shorts</h3>
+                            <button class="shop">shop</button>
+                        </div>
+                    </div>
+                    <button class="paddle paddle-right"><img src="media/icons8-more-than-48.png" alt="scroll right arrow" class="greater-than"></button>
+                </div>
+            </section>
+            <section class="main-section3-content">
+                <div class="inner-section3">
+                    <h2>featured products</h2>
+                    <div class="feat-prod-list">
+                        <div class="feat-prod-item">
+                            <img src="media/shoes1-250x250.jpg" alt="placeholder img" class="img-fluid">
+                            <h3>branded shoes</h3>
+                            <p>$300</p>
+                            <button class="buy-now">buy now</button>
+                        </div>
+                        <div class="feat-prod-item">
+                            <img src="media/t-shirt2-250x250.jpg" alt="placeholder img" class="img-fluid">
+                            <h3>branded tees</h3>
+                            <p>$300</p>
+                            <button class="buy-now">buy now</button>
+                        </div>
+                        <div class="feat-prod-item">
+                            <img src="media/poloshirt2-250x250.jpg" alt="placeholder img" class="img-fluid">
+                            <h3>branded polo's</h3>
+                            <p>$300</p>
+                            <button class="buy-now">buy now</button>
+                        </div>
+                        <div class="feat-prod-item">
+                            <img src="media/wallet1-250x250.jpg" alt="placeholder img" class="img-fluid">
+                            <h3>branded wallets</h3>
+                            <p>$300</p>
+                            <button class="buy-now">buy now</button>
+                        </div>
+                        <div class="feat-prod-item">
+                            <img src="media/bag2-250x250.jpg" alt="placeholder img" class="img-fluid">
+                            <h3>branded bags</h3>
+                            <p>$300</p>
+                            <button class="buy-now">buy now</button>
+                        </div>
+                        <div class="feat-prod-item">
+                            <img src="media/short3-250x250.jpg" alt="placeholder img" class="img-fluid">
+                            <h3>branded shorts</h3>
+                            <p>$300</p>
+                            <button class="buy-now">buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer" id="footer">
+        <div class="inner-footer">
+            <section class="top-footer">
+                <div class="featured-sale top">
+                    <h2>featured sale</h2>
+                    <ul class="feat-sale-list top-footer-content">
+                        <li class="feat-sale-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="feat-sale-item"><a href="#link">American Appeal</a></li>
+                        <li class="feat-sale-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="feat-sale-item"><a href="#link">Big Buddha</a></li>
+                        <li class="feat-sale-item"><a href="#link">Chanel</a></li>
+                        <li class="feat-sale-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="feat-sale-item"><a href="#link">Coach</a></li>
+                        <li class="feat-sale-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+                <div class="mens-store">
+                    <h2>mens store</h2>
+                    <ul class="men-store-list top top-footer-content">
+                        <li class="men-store-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="men-store-item"><a href="#link">American Appeal</a></li>
+                        <li class="men-store-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="men-store-item"><a href="#link">Big Buddha</a></li>
+                        <li class="men-store-item"><a href="#link">Chanel</a></li>
+                        <li class="men-store-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="men-store-item"><a href="#link">Coach</a></li>
+                        <li class="men-store-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+                <div class="women-store">
+                    <h2>womens store</h2>
+                    <ul class="womens-store-list top top-footer-content">
+                        <li class="womens-store-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="womens-store-item"><a href="#link">American Appeal</a></li>
+                        <li class="womens-store-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="womens-store-item"><a href="#link">Big Buddha</a></li>
+                        <li class="womens-store-item"><a href="#link">Chanel</a></li>
+                        <li class="womens-store-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="womens-store-item"><a href="#link">Coach</a></li>
+                        <li class="womens-store-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+                <div class="quick-links">
+                    <h2>quick links</h2>
+                    <ul class="quick-links-list top top-footer-content">
+                        <li class="quick-links-item"><a href="#link">Alex Hudson</a></li>
+                        <li class="quick-links-item"><a href="#link">American Appeal</a></li>
+                        <li class="quick-links-item"><a href="#link">Ben Sherman</a></li>
+                        <li class="quick-links-item"><a href="#link">Big Buddha</a></li>
+                        <li class="quick-links-item"><a href="#link">Chanel</a></li>
+                        <li class="quick-links-item"><a href="#link">Christian Audigier</a></li>
+                        <li class="quick-links-item"><a href="#link">Coach</a></li>
+                        <li class="quick-links-item"><a href="#link">Cole Haan</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="bottom-footer">
+                <p class="colophon-text">Copyright &copy; 2021 Css Author</p>
+            </section>
+        </div>
+    </footer>
+    <!-- <script src="js/app.js"></script> -->
+</body>
+</html>
