@@ -96,6 +96,7 @@ a:hover {
     margin-right: 35px;
     padding-top: 9px;
     font-family: sans-serif;
+    font-weight: 600;
 }
 
 /* End Header */
@@ -220,6 +221,7 @@ a:hover {
     width: 45px;
 }
 
+
 .branded-shoes-content, .branded-tshirts-content, .branded-shorts-content {
     margin-left: 25px;
     margin-top: 15px;
@@ -259,6 +261,10 @@ a:hover {
     font-size: 26px;
     text-transform: uppercase;
     color: white;
+}
+
+.featured-products {
+    box-shadow: 2px 2px 2px 2px grey;
 }
 
 .feat-prod-list {
@@ -305,6 +311,10 @@ a:hover {
     font-size: 24px;
 }
 
+.img-fluid {
+    border-radius: 10px;
+}
+
 /* End Main */
 
 /* Start Footer */
@@ -322,6 +332,7 @@ a:hover {
     color: white;
     text-transform: uppercase;
     font-family: sans-serif;
+    border-bottom: 3px solid white;
 }
 
 .top-footer-content {
@@ -355,6 +366,14 @@ a:hover {
     margin-right: 25%;
 }
 
+.add-button:hover {
+    background-color: coral;
+}
+
+.add-button:focus {
+    background-color: #2ea89b;
+}
+
 .cart-button {
     /* color: white; */
     font-weight: 500;
@@ -365,6 +384,16 @@ a:hover {
     border-radius: 5px;
 }
 
-.shopping-buttons:hover {
+/* .shopping-buttons:hover {
     background-color: coral;
+} */
+
+.bag, .shoes, .shorts, .shirts, .wallets {
+    border-radius: 15px;
+}
+
+.confirm-button {
+    background-color: #2ea89b;
+    text-transform: uppercase;
+    font-weight: 500;
 }

@@ -233,10 +233,10 @@ class Shopping {
                 const item = this.inventory[key];
 
                 subTimesQty = (item.qty * item.price).toFixed(2);
-                subtotalValue.innerText = this.itemsInCart.subTotal.toFixed(2);
-                shippingValue.innerText = shipping.toFixed(2);
+                subtotalValue.innerText = ('$' + this.itemsInCart.subTotal.toFixed(2));
+                shippingValue.innerText = ('$' + shipping.toFixed(2));
                 tax = this.itemsInCart.subTotal * .07;
-                taxValue.innerText = tax.toFixed(2);
+                taxValue.innerText = ('$' + tax.toFixed(2));
                 totalValue.innerText = (this.itemsInCart.subTotal + tax + shipping).toFixed(2);
 
                 // If the qty > 0 (item has been added to cart)
@@ -253,14 +253,14 @@ class Shopping {
                             </div>
                         </td>
                         <td>
-                            <p class="unit-price">${item.price.toFixed(2)}</p>
+                            <p class="unit-price">$${item.price.toFixed(2)}</p>
                         </td>
                         <td>
                             <div id="itemQuantity">
                                 <p id="qtyInput">${item.qty}</p>
                             </div>
                         </td>
-                        <td id="itemSubtotal">${subTimesQty}</td>`;
+                        <td id="itemSubtotal">$${subTimesQty}</td>`;
 
                         table.append(tableRow);
                 }
