@@ -397,3 +397,12 @@ a:hover {
     text-transform: uppercase;
     font-weight: 500;
 }
+
+.confirm-button:hover {
+    background-color: coral;
+}
+
+.back-to-sale {
+    color: black;
+    /* list-style-type: none; */
+}
