@@ -1,1 +1,3 @@
 # Aditii2
+
+Created a shopping cart from a previous HTML project. Here I created a basic shopping cart that will add items to the cart when clicked. Once added to the cart you can click on checkout and it will give an image of the product, price of item, quantity of item and then the subtotal. At the bottom of the checkout page it will give subtotal of all items in cart, shipping/delievery fee, tax and fianlly the total of all of that. Trying to work on not having the cart cleared when refreshed or going back to the sale page. Increment/decrement the quantity of item in the cart or remove the item from the cart. 
